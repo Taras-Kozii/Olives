@@ -12,9 +12,12 @@
 	min-width: #{$min-width}px;
 	color: $text-color-main;
 	font-family: $font-family;
-	font-size: #{$font-size};
+	font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
 	background-color: $bg-color-main;
 	overflow-x: clip;
+	@include adaptive-property(font-size, 0.875, 0, 1.125, rem);
 }
 
 // Скролл заблоковано
