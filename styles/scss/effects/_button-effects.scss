@@ -1,57 +1,72 @@
 @use "../utils/index" as *;
 
-// .fill-down-effect {
-//   position: relative;
-//   left: 0;
-//   right: 0;
-//   transition: 0.15s;
-//   z-index: 1;
-//   overflow: hidden;
+.fill-center {
+  margin-left: 500px;
+  position: relative;
+  border-color: $color-green;
+  background-color: $color-green;
+  color: #fff;
+  transition: color $transition-duraction ease-out 0.1s;
 
-//   &::before {
-//     content: "";
-//     position: absolute;
-//     bottom: 100%;
-//     width: 150%;
-//     height: 300%;
-//     border-radius: 50%;
-//     background-color: $text-color-2;
-//     z-index: -1;
-//     transition: $transition-duraction ease-in-out;
-//   }
+  &::before {
+    position: absolute;
+  content: "";
+  border-radius: 50%;
+  display: block;
+  width: 300px;
+  height: 300px;
+  transition: box-shadow $transition-duraction ease-out;
+  z-index: -1;
+  }
 
-//   @include hover {
-//     color: blueviolet;
-//   }
+  @include hover {
+    color: $color-green;
+    border-color: #cbdd7a;
+  }
+  @include hover-pseudo('::before') {
+    box-shadow: rgb(203, 221, 122) 0px 0px 0px 11em inset;
+  }
+}
 
-//   @include hover-pseudo('::before') {
-//     bottom: -50%;
-//   }
-// }
-
-// .shine {
-//   position: relative;
-//   left: 0;
-//   top: 0;
-//   overflow: hidden;
-//   z-index: 3;
-
-//   &::before {
-//     content: "";
-//     height: 20%;
-//     width: 150%;
-//     opacity: 0.2;
-//     position: absolute;
-//     top: 50%;
-//     left: -120%;
-//     transform: rotate(45deg);
-//     z-index: 2;
-//     background: rgb(255, 255, 255, 0.3);
-//     transition: $transition-duraction-long cubic-bezier(0.19, 1, 0.22, 1);
-//   }
-
-//   @include hover-pseudo("::before") {
-//     left: 120%;
-//     transition: $transition-duraction-long cubic-bezier(0.19, 1, 0.22, 1);
-//   }
-// }
+.border-flip {
+  display: inline-block;
+  padding: 15px;
+  width: 180px;
+  position: relative;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 600;
+  background: none;
+  border: none;
+} 
+ 
+.border-flip::before {
+  content: "";
+  position: absolute;
+  inset: 0px;
+  transform: perspective(350px) rotateX(0deg);
+  transition: 0.35s;
+} 
+ 
+.border-flip:hover::before {
+  transition: 0.35s;
+  transform: perspective(350px) rotateX(-180deg);
+} 
+ 
+.border-flip--green {
+  color: rgb(84, 187, 108);
+} 
+ 
+.border-flip--green::before {
+  border: 3px solid rgb(84, 187, 108);
+} 
+ 
+.btn {
+  font-family: Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+} 
+ 
+.btn:hover .btn-slide-show-text1 {
+  margin-left: 65px;
+} 
+ 

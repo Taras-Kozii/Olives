@@ -1,44 +1,57 @@
 @use "../utils/_index.scss" as *;
 
-.title {
-  font-family: $font-family;
+.section-title {
+  line-height: 125%;
   font-weight: 600;
-  line-height: 100%;
-  color: $text-color-main;
-  @include adaptive-property(font-size, 4.25, 3, 3, rem);
-  @include adaptive-property(margin-bottom, 24, 8, 4);
+  letter-spacing: 0.1px;
+  color: $color-olive;
+  padding-inline: 0.625rem;
+  @include adaptive-property(font-size, 1.125, 0, 2, rem);
 }
+.section-header {
+  display: flex;
+  flex-direction: column-reverse;
+  row-gap: 1.25rem;
 
-.subtitle {
-  font-family: $font-family;
-  line-height: 150%;
-  color: $text-color-main;
-  @include adaptive-property(font-size, 1.5, 2.5, 2.5, rem);
+  &__img {
+    width: 138px;
+    height: 15px;
+    @include ibg;
+  }
 }
 
 //=================================BUTTON=============================
 .button {
-  width: min(100%, 480px);
-  position: relative;
-  left: 0;
-  right: 0;
-  padding-block: 1rem;
+  min-width: fit-content;
+  max-width: 195px;
+  padding-inline: 0.875rem;
+  padding-block: 1.125rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #2b9ee7;
 
-  font-size: 1.5rem;
-  font-weight: 500;
-  line-height: 150%;
+  font-size: 0.875rem;
+  letter-spacing: 0.2px;
+  font-weight: 600;
+  line-height: 128.571429%; /* 18px/14 */
+  color: $color-green;
 
-  border-radius: 20px;
-  border: 2px solid #6cafd9;
-  background: #c9e4ea;
+  border-radius: 5px;
+  border: 2px solid currentColor;
+  background-color: rgba($color: #fff, $alpha: .6);
+
   transition: $transition-duraction;
   cursor: pointer;
   z-index: 1;
   overflow: hidden;
+}
+.button--color-olive {
+  color: $color-olive;
+}
+.button--bg {
+  border-color: $color-green;
+  background-color: $color-green;
+  color: #fff;
 }
 
 // ==============================LOGO
