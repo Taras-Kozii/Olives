@@ -1,0 +1,32 @@
+@use "../utils/_index" as *;
+
+.hero {
+  @include position-r;
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("../../../images/hero.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: right;
+    z-index: -1;
+  }
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    @include adaptive-property(row-gap, 1, 0, 2, rem);
+    @include adaptive-property(padding-block, 150, 0, 200);
+  }
+  &__text {
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.625rem;
+    color: $color-olive;
+    font-weight: 500;
+    line-height: 133.333333%; /* 24px/18 */
+    letter-spacing: 0.2px;
+  }
+}

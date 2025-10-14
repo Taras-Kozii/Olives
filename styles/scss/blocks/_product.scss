@@ -1,0 +1,41 @@
+@use "../utils/_index" as *;
+
+.product {
+  &__content {
+    display: flex;
+    flex-direction: column;
+    row-gap: 22px;
+    @include on-mobile-s {
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      column-gap: 20px;
+    }
+    @include on-mobile-l {
+      column-gap: 42px;
+    }
+  }
+  &__section-header {
+    @include adaptive-property(margin-bottom, 1.5, 0, 3, rem);
+  }
+  &__text {
+    padding-inline: 0.625rem;
+    @include adaptive-property(margin-bottom, 1.125, 0, 1.5, rem);
+    letter-spacing: 0.2px;
+    line-height: 133.333333%; /* 24px/18 */
+  }
+  &__img {
+    display: block;
+    aspect-ratio: 1 / 1;
+    @include ibg;
+    @include on-mobile-s {
+      flex: 0 0 40%;
+    }
+    @include on-mobile-l {
+      flex: 0 0 54.88%;
+      aspect-ratio: 612 / 408;
+    }
+  }
+  &__link {
+    padding-inline: 0.625rem;
+  }
+}

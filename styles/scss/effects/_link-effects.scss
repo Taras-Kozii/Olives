@@ -1,5 +1,42 @@
 @use "../utils/index" as *;
 
+.link-show-bars {
+  position: relative;
+  transition: font-weight $transition-duraction ease;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: $color-olive;
+    transform: scaleX(0);
+    transition: transform $transition-duraction ease;
+  }
+
+  &::before {
+    top: 0;
+    transform-origin: center right;
+  }
+  &::after {
+    bottom: 0;
+    transform-origin: center left;
+  }
+  @include hover-pseudo("::before") {
+    transform-origin: center left;
+    transform: scaleX(1);
+  }
+  @include hover-pseudo("::after") {
+    transform-origin: center right;
+    transform: scaleX(1);
+  }
+  @include hover {
+    font-weight: 600;
+  }
+}
+
 //UNDERLINE
 // .underline-show-center {
 //   $before-height: 2px;

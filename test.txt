@@ -1,0 +1,20 @@
+<a href="#" class="button fill-center"
+                ><span>CONTACT US </span></a
+              >
+
+              <a href="#" class="button border-flip"><span>CONTACT US</span></a>
+
+
+ <div class="section-header">
+                <h3 class="section-header__title section-title">WHO WE ARE</h3>
+                <div class="section-header__img">
+                  <img
+                    src="./images/line.webp"
+                    alt="painting-line"
+                    width="138"
+                    height="15"
+                    decoding="async"
+                    loading="lazy"
+                  />
+                </div>
+              </div>

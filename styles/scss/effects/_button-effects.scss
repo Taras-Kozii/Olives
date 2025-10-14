@@ -1,72 +1,54 @@
 @use "../utils/index" as *;
 
 .fill-center {
-  margin-left: 500px;
   position: relative;
-  border-color: $color-green;
+  border: 2px solid $color-green;
   background-color: $color-green;
   color: #fff;
+  overflow: hidden;
   transition: color $transition-duraction ease-out 0.1s;
 
   &::before {
     position: absolute;
-  content: "";
-  border-radius: 50%;
-  display: block;
-  width: 300px;
-  height: 300px;
-  transition: box-shadow $transition-duraction ease-out;
-  z-index: -1;
+    content: "";
+    border-radius: 50%;
+    display: block;
+    width: 25em;
+    height: 25em;
+    transition: box-shadow $transition-duraction ease-out;
+    z-index: -1;
   }
 
   @include hover {
     color: $color-green;
-    border-color: #cbdd7a;
+    border-color: $color-green;
   }
-  @include hover-pseudo('::before') {
-    box-shadow: rgb(203, 221, 122) 0px 0px 0px 11em inset;
+  @include hover-pseudo("::before") {
+    box-shadow: rgb(203, 221, 122) 0px 0px 0px 15em inset;
   }
 }
 
 .border-flip {
-  display: inline-block;
-  padding: 15px;
-  width: 180px;
   position: relative;
-  text-decoration: none;
-  text-transform: uppercase;
-  font-weight: 600;
-  background: none;
-  border: none;
-} 
- 
-.border-flip::before {
-  content: "";
-  position: absolute;
-  inset: 0px;
-  transform: perspective(350px) rotateX(0deg);
-  transition: 0.35s;
-} 
- 
-.border-flip:hover::before {
-  transition: 0.35s;
-  transform: perspective(350px) rotateX(-180deg);
-} 
- 
-.border-flip--green {
-  color: rgb(84, 187, 108);
-} 
- 
-.border-flip--green::before {
-  border: 3px solid rgb(84, 187, 108);
-} 
- 
-.btn {
-  font-family: Arial, Helvetica, sans-serif;
-  text-transform: uppercase;
-} 
- 
-.btn:hover .btn-slide-show-text1 {
-  margin-left: 65px;
-} 
- 
+  color: $color-olive;
+  background-color: rgba($color: #fff, $alpha: 0.6);
+  transition: background-color, $transition-duraction;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0px;
+    transform: perspective(300px) rotateX(0deg);
+    border: 2px solid currentColor;
+    border-radius: 5px;
+    transition: $transition-duraction;
+  }
+  @include hover {
+    background-color: rgba($color: #fff, $alpha: 0.9);
+  }
+  @include hover-pseudo("::before") {
+    transition: $transition-duraction;
+    border: 4px solid currentColor;
+    transform: perspective(350px) rotateX(-180deg);
+  }
+}

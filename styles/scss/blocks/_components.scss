@@ -6,6 +6,7 @@
   letter-spacing: 0.1px;
   color: $color-olive;
   padding-inline: 0.625rem;
+  text-transform: uppercase;
   @include adaptive-property(font-size, 1.125, 0, 2, rem);
 }
 .section-header {
@@ -29,31 +30,42 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
 
   font-size: 0.875rem;
   letter-spacing: 0.2px;
   font-weight: 600;
   line-height: 128.571429%; /* 18px/14 */
-  color: $color-green;
 
   border-radius: 5px;
-  border: 2px solid currentColor;
-  background-color: rgba($color: #fff, $alpha: .6);
 
   transition: $transition-duraction;
   cursor: pointer;
   z-index: 1;
-  overflow: hidden;
 }
-.button--color-olive {
-  color: $color-olive;
-}
-.button--bg {
-  border-color: $color-green;
-  background-color: $color-green;
-  color: #fff;
-}
+// ===============================TITLE-BLOCK==================================
+.title-block {
+  &__subtitle {
+    color: $color-olive;
+    font-weight: 500;
+    line-height: 133.333333%; /* 24px/18 */
+    letter-spacing: 0.2px;
+    margin-bottom: 0.625rem;
+  }
+  &__title {
+    color: $color-green;
+    letter-spacing: 0;
+    line-height: 122.727273%; /* 54px/44 */
+    @include adaptive-property(font-size, 1.375, 0, 2.75, rem);
 
+    strong {
+      color: $color-olive;
+    }
+  }
+  &--center {
+    text-align: center;
+  }
+}
 // ==============================LOGO
 .logo {
   display: flex;
@@ -65,4 +77,11 @@
     @include adaptive-property(width, 42, 0, 60);
     @include ibg;
   }
+}
+.read-more-link {
+  padding-block: 5px;
+  letter-spacing: 0.2px;
+  line-height: 133.333333%; /* 24px/18 */
+  text-transform: uppercase;
+  color: $color-olive;
 }
