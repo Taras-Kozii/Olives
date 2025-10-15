@@ -36,6 +36,7 @@
   letter-spacing: 0.2px;
   font-weight: 600;
   line-height: 128.571429%; /* 18px/14 */
+  text-transform: uppercase;
 
   border-radius: 5px;
 
@@ -68,20 +69,26 @@
 }
 // ==============================LOGO
 .logo {
-  display: flex;
-  align-items: center;
-
-  &__img {
+  width: 136px;
+  height: 37px;
+  svg {
     display: block;
-    aspect-ratio: 1 / 1;
-    @include adaptive-property(width, 42, 0, 60);
-    @include ibg;
+    object-fit: cover;
+    object-position: center;
+  }
+  &--white {
+    path {
+      stroke: #fff;
+      fill: #fff;
+    }
   }
 }
 .read-more-link {
+  padding-inline: 0.625rem;
   padding-block: 5px;
   letter-spacing: 0.2px;
   line-height: 133.333333%; /* 24px/18 */
   text-transform: uppercase;
+  font-weight: 500;
   color: $color-olive;
 }

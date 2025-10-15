@@ -1,1 +1,90 @@
 @use "../utils/_index" as *;
+
+.actions {
+  &__content {
+    padding-bottom: 30px;
+    @include adaptive-property(padding-top, 30, 0, 108);
+  }
+  &__main {
+    display: flex;
+    justify-content: center;
+    row-gap: 50px;
+    column-gap: 30px;
+    flex-wrap: wrap;
+    @include adaptive-property(margin-bottom, 25, 0, 50);
+
+    @include on-mobile-l {
+      justify-content: space-between;
+      flex-wrap: nowrap;
+    }
+  }
+  &__button-blocks {
+    flex: 0 0 100%; /* 677/1115 */
+    display: flex;
+    justify-content: center;
+    column-gap: 20px;
+    row-gap: 2rem;
+    flex-wrap: wrap;
+
+    @include on-mobile-s {
+      flex-wrap: nowrap;
+    }
+    @include on-mobile-l {
+      flex: 0 0 60%; /* 677/1115 */
+      justify-content: space-between;
+    }
+  }
+  &__lists {
+    flex: 0 0 100%; /* 677/1115 */
+    display: flex;
+    justify-content: center;
+    column-gap: 20px;
+
+    @include on-mobile-l {
+      flex: 0 0 40%; /* 677/1115 */
+      justify-content: space-between;
+    }
+  }
+  &__list {
+    display: flex;
+    flex-direction: column;
+    @include adaptive-property(row-gap, 0.75, 0, 1.5, rem);
+  }
+  &__link {
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 128.571429%; /* 18px/14 */
+    letter-spacing: 0.1px;
+    color: $color-green;
+  }
+  &__footer {
+    display: flex;
+    column-gap: 0.625rem;
+    color: $color-green;
+    font-size: 0.75rem;
+    font-weight: 400;
+    line-height: 133.333333%; /* 16px/12 */
+    letter-spacing: 0.2px;
+  }
+}
+.button-block {
+  flex: 0 0 50%;
+  max-width: 310px;
+  &__title {
+    color: $color-green;
+    font-weight: 500;
+    line-height: 133.333333%; /* 24px/18 */
+    letter-spacing: 0.2px;
+    margin-bottom: 0.3125rem;
+  }
+  &__text {
+    color: $color-green;
+    font-size: 0.875rem;
+    line-height: 157.142857%; /* 22px/14 */
+    letter-spacing: 0.1px;
+    margin-bottom: 1.0625rem;
+  }
+  &__button:not(:last-child) {
+    margin-bottom: 1.0625rem;
+  }
+}

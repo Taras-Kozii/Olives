@@ -33,7 +33,34 @@
     transform: scaleX(1);
   }
   @include hover {
-    font-weight: 600;
+    font-weight: 700;
+  }
+}
+.link-show-mask {
+  display: inline-block;
+  padding: 5px 2px;
+  position: relative;
+  z-index: 1;
+
+  &::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: -0.25em;
+    right: -0.25em;
+    transform-origin: center right;
+    transform: scaleX(0);
+    transition: transform 0.2s ease-in-out;
+    background-image: url("../../../images/line.webp");
+    background-position: center;
+    background-size: 100% 110%;
+    background-repeat: no-repeat;
+  }
+  @include hover-pseudo("::before") {
+    transform: scaleX(1);
+    transform-origin: center left;
   }
 }
 

@@ -11,6 +11,9 @@
     background-size: cover;
     background-position: center;
     z-index: -1;
+    @media (min-width: 1368px) {
+      background-size: contain;
+    }
   }
   &__content {
     display: flex;

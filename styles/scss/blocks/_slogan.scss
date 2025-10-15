@@ -1,1 +1,46 @@
 @use "../utils/_index" as *;
+
+.slogan {
+  width: 100vw;
+  @include position-r;
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    background-image: url("../../../images/masks/bg-2.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+    mask-image: url("../../../images/masks/bg-2.png");
+    mask-position: center;
+
+  }
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    @include adaptive-property(row-gap, 25, 0, 50);
+  }
+  &__title {
+    letter-spacing: 0.2px;
+    line-height: 123.076923%; /* 64px/52 */
+    font-weight: 400;
+    text-align: center;
+    color: $color-olive;
+    @include adaptive-property(font-size, 1.5625, 0, 3.25, rem);
+  }
+  &__author {
+    letter-spacing: 0.2px;
+    color: $color-olive;
+    font-weight: 500;
+    line-height: 133.333333%; /* 24px/18 */
+  }
+  &__link {
+    align-self: end;
+  }
+}
