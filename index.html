@@ -9,9 +9,7 @@
       href="./images/icons/fav.ico"
       type="image/x-icon"
     />
-    <!-- ПЕРЕДЗАВАНТАЖЕННЯ КАРТИНОК -->
-    <!-- <link rel="preload" as="image" href="" media="(max-width: 766px)" />
-    <link rel="preload" as="image" href="" media="(min-width: 767px)" /> -->
+    <link rel="preload" as="image" href="./images/hero.webp" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -22,11 +20,24 @@
   </head>
   <body class="page right-fix-padding">
     <div class="wrapper">
-      <!-- <header class="header">
+      <header class="header">
+        <div class="header-top">
+          <a href="#"
+            >Sign up for free newsletters and get more Green Olives delivered to
+            your inbox</a
+          >
+          <button class="close"></button>
+        </div>
         <div class="header__container">
           <div class="header__content">
-            <a href="#" class="logo header__logo logo" aria-label="logo-icon">
-              <img src="" alt="logo" decoding="async" width="44" height="42" />
+            <a href="#" class="logo" aria-label="logo-icon">
+              <img
+                src="./images/logo.png"
+                alt="logo"
+                decoding="async"
+                width="138"
+                height="38"
+              />
             </a>
             <div class="header__menu menu anim">
               <nav class="menu__body">
@@ -34,34 +45,51 @@
                   <li class="menu__item">
                     <a
                       href="#"
-                      class="menu__link hover-underline"
-                      data-goto=".hero"
-                      ><span>Головна</span></a
+                      class="menu__link link-show-mask"
+                      data-goto=".about"
+                      ><span>Who we are</span></a
                     >
                   </li>
                   <li class="menu__item">
                     <a
                       href="#"
-                      class="menu__link hover-underline"
-                      data-goto=".hero"
-                      ><span>Головна</span></a
+                      class="menu__link link-show-mask"
+                      data-goto=".do"
+                      ><span>What we do</span></a
                     >
                   </li>
                   <li class="menu__item">
                     <a
                       href="#"
-                      class="menu__link hover-underline"
+                      class="menu__link link-show-mask"
+                      data-goto=".product"
+                      ><span>The product</span></a
+                    >
+                  </li>
+                  <li class="menu__item">
+                    <a
+                      href="#"
+                      class="menu__link link-show-mask"
                       data-goto=".hero"
-                      ><span>Головна</span></a
+                      ><span>Health</span></a
+                    >
+                  </li>
+                  <li class="menu__item">
+                    <a
+                      href="#"
+                      class="menu__link link-show-mask"
+                      data-goto=".contact"
+                      ><span>Contact us</span></a
                     >
                   </li>
                 </ul>
               </nav>
-              <button class="burger midle-hidden"><span></span></button>
+              <button class="burger midle-hidden"><span>Х</span></button>
             </div>
+            <a href="#" class="button border-flip">let's do business</a>
           </div>
         </div>
-      </header> -->
+      </header>
 
       <main class="main">
         <section class="main__section hero">

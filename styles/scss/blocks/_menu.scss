@@ -1,0 +1,84 @@
+@use "../utils/_index" as *;
+
+@keyframes open-anim {
+  50% {
+    width: 300%;
+    height: 300%;
+  }
+
+  100% {
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+  }
+}
+
+@keyframes not-open-anim {
+  0% {
+    width: 300%;
+    height: 300%;
+  }
+}
+
+.menu {
+  @media (max-width: 1024.9px) {
+    &__body {
+      position: fixed;
+      right: 0;
+      top: 0;
+      width: 0px;
+      height: 0px;
+      // background-color: #cca9a9;
+      border-bottom-left-radius: 100%;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
+      animation: not-open-anim 0.2s both;
+      transition: 0.2s;
+      overflow: auto;
+      z-index: 2;
+    }
+
+    &__list {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      row-gap: 2rem;
+    }
+
+    &__item,
+    &__link {
+      opacity: 0;
+    }
+  }
+
+  @media (min-width: 1025px) {
+    &__list {
+      padding-block: 22px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      flex-wrap: wrap;
+      column-gap: 80px;
+      row-gap: 1.5rem;
+    }
+  }
+
+  &__link {
+    @include adaptive-property(font-size, 1.5, 1.125, 1.125, rem);
+    @include position-r;
+    display: inline-block;
+    font-weight: 500;
+    line-height: 36px;
+    color: #000;
+  }
+}
+
+.menu__body.open {
+  padding: 100px 30px 50px;
+  animation: open-anim 0.6s ease both;
+}
+
+.menu__body.open li,
+.menu__body.open a {
+  opacity: 1;
+  transition: 0.4s ease-in-out 0.38s;
+}
