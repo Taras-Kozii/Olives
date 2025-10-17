@@ -10,7 +10,7 @@
 
   &__content {
     width: 100%;
-    padding: 10px 0;
+    padding: 64px 0 30px;
     @include flex(space-between, center);
   }
 
@@ -33,4 +33,55 @@
 .header.hidden {
   opacity: 0;
   transform: translateY(-30px);
+}
+.header-top {
+  display: none;
+  @include on-tablet {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    background-color: $color-green;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-block: 1.0625rem;
+    padding-inline: 1.375rem;
+
+    a {
+      justify-self: center;
+      width: fit-content;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 0.875rem;
+      line-height: 157.142857%; /* 22px/14 */
+      letter-spacing: 0.1px;
+      color: #f9f9fa;
+      text-align: center;
+    }
+    .close {
+      position: relative;
+      width: 13px;
+      height: 13px;
+      cursor: pointer;
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: calc(50% - 2px);
+        width: 100%;
+        height: 2px;
+        border-radius: 5px;
+        background-color: #f9f9fa;
+      }
+      &::before {
+        rotate: 45deg;
+      }
+      &::after {
+        rotate: -45deg;
+      }
+    }
+  }
 }
