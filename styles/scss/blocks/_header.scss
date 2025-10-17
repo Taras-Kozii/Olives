@@ -10,8 +10,12 @@
 
   &__content {
     width: 100%;
-    padding: 64px 0 30px;
+    padding: 30px 0 30px;
+    gap: 10px;
     @include flex(space-between, center);
+    @include on-tablet {
+      padding: 64px 0 30px;
+    }
   }
 
   &__menu {
@@ -20,14 +24,18 @@
   }
 
   &__logo {
-    z-index: 5;
     @include position-r;
+  }
+  &__button {
+    z-index: 5;
+    @media (max-width: 1024.9px) {
+      order: -1;
+    }
   }
 }
 
 .header.scrolling {
-  background: rgba(79, 79, 84, 0.2);
-  backdrop-filter: blur(18px);
+  background: rgba(105, 123, 3, 0.6);
 }
 
 .header.hidden {

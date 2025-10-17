@@ -71,6 +71,8 @@
 .logo {
   width: 136px;
   height: 37px;
+  z-index: 5;
+  @include ibg(contain);
   svg {
     display: block;
     object-fit: cover;

@@ -461,6 +461,16 @@ h6 {
 .logo {
   width: 136px;
   height: 37px;
+  z-index: 5;
+  overflow: hidden;
+}
+.logo img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -o-object-position: center;
+     object-position: center;
 }
 .logo svg {
   display: block;
@@ -495,7 +505,8 @@ h6 {
 }
 .header__content {
   width: 100%;
-  padding: 64px 0 30px;
+  padding: 30px 0 30px;
+  gap: 10px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -505,6 +516,11 @@ h6 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+@media (min-width: 991.98px) {
+  .header__content {
+    padding: 64px 0 30px;
+  }
 }
 .header__menu {
   -webkit-column-gap: 10px;
@@ -521,15 +537,23 @@ h6 {
           align-items: center;
 }
 .header__logo {
-  z-index: 5;
   position: relative;
   left: 0;
   top: 0;
 }
+.header__button {
+  z-index: 5;
+}
+@media (max-width: 1024.9px) {
+  .header__button {
+    -webkit-box-ordinal-group: 0;
+        -ms-flex-order: -1;
+            order: -1;
+  }
+}
 
 .header.scrolling {
-  background: rgba(79, 79, 84, 0.2);
-  backdrop-filter: blur(18px);
+  background: rgba(105, 123, 3, 0.6);
 }
 
 .header.hidden {
@@ -672,6 +696,9 @@ h6 {
     transition: 0.2s;
     overflow: auto;
     z-index: 2;
+    -webkit-box-ordinal-group: -2;
+        -ms-flex-order: -3;
+            order: -3;
   }
   .menu__list {
     display: -webkit-box;
@@ -742,8 +769,120 @@ h6 {
 .menu__body.open li,
 .menu__body.open a {
   opacity: 1;
-  -webkit-transition: 0.4s ease-in-out 0.38s;
-  transition: 0.4s ease-in-out 0.38s;
+  -webkit-transition: 0.4s ease-in-out 0.25s;
+  transition: 0.4s ease-in-out 0.25s;
+}
+
+.both-hidden span:before, .burger:after, .burger:before, .burger span {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  background-color: #7e4e24;
+  width: 40px;
+  height: 3px;
+  border-radius: 5px;
+}
+
+.burger {
+  display: none;
+}
+@media (max-width: 1024px) {
+  .burger {
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    position: relative;
+    background-color: transparent;
+    border: 0;
+    padding: 0;
+    outline: none;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    -webkit-touch-callout: none;
+    -ms-touch-action: manipulation;
+        touch-action: manipulation;
+    cursor: pointer;
+    z-index: 5;
+  }
+}
+.burger span {
+  margin-top: -1.5px;
+}
+.burger:before {
+  content: "";
+  margin-top: -16.5px;
+}
+.burger:after {
+  content: "";
+  margin-top: 13.5px;
+}
+
+.both-hidden:before, .both-hidden:after {
+  -webkit-transition: 0.2s ease 0.2s;
+  transition: 0.2s ease 0.2s;
+}
+.both-hidden:after {
+  left: auto;
+  right: 0;
+}
+.both-hidden span {
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+.both-hidden span:before {
+  content: "";
+  -webkit-transition: inherit;
+  transition: inherit;
+  left: 0;
+  top: 0;
+}
+.both-hidden.active:before, .both-hidden.active:after {
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+  width: 0;
+}
+.both-hidden.active span {
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+  -webkit-transition: 0.2s ease 0.2s;
+  transition: 0.2s ease 0.2s;
+}
+.both-hidden.active span:before {
+  -webkit-transform: rotate(-90deg);
+      -ms-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+}
+
+.dott:before, .dott:after {
+  -webkit-transition-property: margin, opacity;
+  transition-property: margin, opacity;
+  -webkit-transition-duration: 0.25s, 0s;
+          transition-duration: 0.25s, 0s;
+  -webkit-transition-delay: 0.25s;
+          transition-delay: 0.25s;
+}
+.dott span {
+  -webkit-transition: 0.25s ease;
+  transition: 0.25s ease;
+}
+.dott.active span {
+  width: 20px;
+  height: 20px;
+  margin-top: -10px;
+  left: 20px;
+  border-radius: 80%;
+  -webkit-transition-delay: 0.25s;
+          transition-delay: 0.25s;
+}
+.dott.active:before, .dott.active:after {
+  margin-top: 0;
+  opacity: 0;
+  -webkit-transition-delay: 0s, 0.25s;
+          transition-delay: 0s, 0.25s;
 }
 
 .hero {
