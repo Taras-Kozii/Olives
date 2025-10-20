@@ -13,6 +13,10 @@
   width: clamp(280px, 100%, 877px);
   aspect-ratio: 877 / 584;
   cursor: pointer;
+  transition: border-radius $transition-duraction;
+  @include hover {
+    border-radius: 30px;
+  }
   @include ibg;
   @include hover-pseudo(" .video-thumbnail__play") {
     border-radius: 50%;

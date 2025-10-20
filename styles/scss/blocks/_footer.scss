@@ -42,5 +42,11 @@
     font-weight: 500;
     line-height: 128.571429%; /* 18px/14 */
     letter-spacing: 0.1px;
+    img {
+      transition: border-radius $transition-duraction;
+      @include hover {
+        border-radius: 10px;
+      }
+    }
   }
 }

@@ -69,20 +69,21 @@
 }
 // ==============================LOGO
 .logo {
-  width: 136px;
+  width: 131px;
   height: 37px;
   z-index: 5;
   @include ibg(contain);
-  svg {
-    display: block;
-    object-fit: cover;
-    object-position: center;
-  }
+
   &--white {
     path {
       stroke: #fff;
       fill: #fff;
     }
+    svg {
+    display: block;
+    object-fit: contain;
+    object-position: center;
+  }
   }
 }
 .read-more-link {
