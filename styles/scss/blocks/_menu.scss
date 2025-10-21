@@ -28,7 +28,7 @@
       top: 0;
       width: 0px;
       height: 0px;
-      background-color: #cca9a9;
+      background: linear-gradient(to right, #fef08a, #fbbf24);
       border-bottom-left-radius: 100%;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
       animation: not-open-anim 0.2s both;
@@ -143,46 +143,6 @@ $radius: 5px;
   display: none;
 }
 
-.both-hidden {
-  &:before,
-  &:after {
-    transition: 0.2s ease 0.2s;
-  }
-
-  &:after {
-    left: auto;
-    right: 0;
-  }
-
-  span {
-    transition: 0.2s;
-
-    &:before {
-      @extend %menu-dash;
-      content: "";
-      transition: inherit;
-      left: 0;
-      top: 0;
-    }
-  }
-
-  &.active {
-    &:before,
-    &:after {
-      transition: 0.2s ease;
-      width: 0;
-    }
-
-    span {
-      transform: rotate(45deg);
-      transition: 0.2s ease 0.2s;
-
-      &:before {
-        transform: rotate(-90deg);
-      }
-    }
-  }
-}
 .dott {
   &:before,
   &:after {
