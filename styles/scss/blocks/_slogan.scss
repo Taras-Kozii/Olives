@@ -3,21 +3,27 @@
 .slogan {
   width: 100vw;
   @include position-r;
+  z-index: 1;
+
   &::before {
     content: "";
     position: absolute;
-    left: 0;
+    z-index: -1;
     top: 0;
     bottom: 0;
-    right: 0;
-    background-image: url("../../../images/masks/bg-2.webp");
-    background-repeat: no-repeat;
-    background-size: cover;
+    left: -0.25em;
+    right: -0.25em;
+    transform-origin: center right;
+    transform: scaleX(0);
+    transition: transform $transition-duraction ease-in-out 0.5s;
+    background-image: url("../../../images/masks/slogan-mask.webp");
     background-position: center;
-    z-index: -1;
-    mask-image: url("../../../images/masks/bg-2.png");
-    mask-position: center;
-
+    background-size: 110% 110%;
+    background-repeat: no-repeat;
+  }
+  &.active::before {
+    transform: scaleX(1);
+    transform-origin: center left;
   }
   &__content {
     display: flex;
