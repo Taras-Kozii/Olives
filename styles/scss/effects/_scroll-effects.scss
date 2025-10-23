@@ -1,33 +1,37 @@
 @use "../utils/index" as *;
 
-// -------------------SHOW TOP + BLUR
-// .show-top {
+// .scroll-slide-in-right {
+//   transition: opacity $transition-duraction cubic-bezier(0.25, 0.46, 0.45, 0.94),
+//     transform $transition-duraction cubic-bezier(0.25, 0.46, 0.45, 0.94);
+//   transition-delay: var(--delay);
+//   transform: translateZ(-1400px) translateX(1000px);
 //   opacity: 0;
-//   transform: translate(0, 100px);
-//   filter: blur(33px);
-//   transition: opacity, transform, filter;
-//   transition-duration: $transition-duraction;
-//   transition-timing-function: ease-in-out;
 // }
-
-// .show-top.active {
+// .scroll-slide-in-right.active {
+//   transform: translateZ(0) translateX(0);
 //   opacity: 1;
-//   transform: translate(0, 0);
-//   filter: blur(0);
 // }
 
-// -------------------SHOW LEFT TO RIGHT + BLUR
-// .show-left-right {
+// .scroll-slide-in-left {
+//   transition: opacity $transition-duraction cubic-bezier(0.25, 0.46, 0.45, 0.94),
+//     transform $transition-duraction cubic-bezier(0.25, 0.46, 0.45, 0.94);
+//   transform: translateZ(-1400px) translateX(-1000px);
 //   opacity: 0;
-//   transform: translate(-30px, 0px);
-//   filter: blur(33px);
-//   transition: opacity, transform, filter;
-//   transition-duration: $transition-duraction;
-//   transition-timing-function: ease-in-out;
+// }
+// .scroll-slide-in-left.active {
+//   transform: translateZ(0) translateX(0);
+//   opacity: 1;
 // }
 
-// .show-left-right.active {
-//   opacity: 1;
-//   transform: translate(0, 0);
-//   filter: blur(0);
-// }
+.scroll-swing-in-top {
+  transition: opacity $transition-duraction ease-in-out var(--delay),
+    transform $transition-duraction ease-in-out var(--delay);
+  transform: rotateX(-100deg);
+  transform-origin: top;
+  opacity: 0;
+}
+.scroll-swing-in-top.active {
+  transform: rotateX(0deg);
+  transform-origin: top;
+  opacity: 1;
+}

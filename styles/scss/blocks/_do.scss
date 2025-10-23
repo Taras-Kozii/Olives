@@ -13,9 +13,10 @@
   width: clamp(280px, 100%, 877px);
   aspect-ratio: 877 / 584;
   cursor: pointer;
-  transition: border-radius $transition-duraction;
+  transition: box-shadow $transition-duraction;
   @include hover {
-    border-radius: 30px;
+    box-shadow: 3px 3px 10px 3px #dddddd;
+    transition: box-shadow $transition-duraction;
   }
   @include ibg;
   @include hover-pseudo(" .video-thumbnail__play") {

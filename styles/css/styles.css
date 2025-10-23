@@ -313,6 +313,28 @@ h6 {
   }
 }
 
+.scroll-swing-in-top {
+  -webkit-transition: opacity 0.3s ease-in-out var(--delay), -webkit-transform 0.3s ease-in-out var(--delay);
+  transition: opacity 0.3s ease-in-out var(--delay), -webkit-transform 0.3s ease-in-out var(--delay);
+  transition: opacity 0.3s ease-in-out var(--delay), transform 0.3s ease-in-out var(--delay);
+  transition: opacity 0.3s ease-in-out var(--delay), transform 0.3s ease-in-out var(--delay), -webkit-transform 0.3s ease-in-out var(--delay);
+  -webkit-transform: rotateX(-100deg);
+          transform: rotateX(-100deg);
+  -webkit-transform-origin: top;
+      -ms-transform-origin: top;
+          transform-origin: top;
+  opacity: 0;
+}
+
+.scroll-swing-in-top.active {
+  -webkit-transform: rotateX(0deg);
+          transform: rotateX(0deg);
+  -webkit-transform-origin: top;
+      -ms-transform-origin: top;
+          transform-origin: top;
+  opacity: 1;
+}
+
 .page {
   min-width: 320px;
   color: #26292b;
@@ -488,7 +510,7 @@ h6 {
   padding-inline: 0.625rem;
   padding-block: 5px;
   letter-spacing: 0.2px;
-  line-height: 133.333333%; /* 24px/18 */
+  line-height: 133.333333%;
   text-transform: uppercase;
   font-weight: 500;
   color: #7e4e24;
@@ -877,10 +899,16 @@ h6 {
 .hero__img img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  -o-object-fit: contain;
+     object-fit: contain;
   -o-object-position: center;
      object-position: center;
+}
+@media (min-width: 991.98px) {
+  .hero__img img {
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
 }
 .hero::before {
   content: "";
@@ -915,6 +943,7 @@ h6 {
           transform-origin: center left;
 }
 .hero__content {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -927,6 +956,7 @@ h6 {
           justify-content: center;
   row-gap: 2rem;
   padding-block: 200px;
+  z-index: 3;
 }
 @media (max-width: 1440px) {
   .hero__content {
@@ -978,18 +1008,30 @@ h6 {
   width: clamp(280px, 100%, 877px);
   aspect-ratio: 877/584;
   cursor: pointer;
-  -webkit-transition: border-radius 0.3s;
-  transition: border-radius 0.3s;
+  -webkit-transition: -webkit-box-shadow 0.3s;
+  transition: -webkit-box-shadow 0.3s;
+  transition: box-shadow 0.3s;
+  transition: box-shadow 0.3s, -webkit-box-shadow 0.3s;
   overflow: hidden;
 }
 @media (hover: hover) and (pointer: fine) {
   .video-thumbnail:hover, .video-thumbnail:focus-within {
-    border-radius: 30px;
+    -webkit-box-shadow: 3px 3px 10px 3px #dddddd;
+            box-shadow: 3px 3px 10px 3px #dddddd;
+    -webkit-transition: -webkit-box-shadow 0.3s;
+    transition: -webkit-box-shadow 0.3s;
+    transition: box-shadow 0.3s;
+    transition: box-shadow 0.3s, -webkit-box-shadow 0.3s;
   }
 }
 @media (hover: none) and (pointer: coarse) {
   .video-thumbnail:active, .video-thumbnail:focus, .video-thumbnail:focus-within {
-    border-radius: 30px;
+    -webkit-box-shadow: 3px 3px 10px 3px #dddddd;
+            box-shadow: 3px 3px 10px 3px #dddddd;
+    -webkit-transition: -webkit-box-shadow 0.3s;
+    transition: -webkit-box-shadow 0.3s;
+    transition: box-shadow 0.3s;
+    transition: box-shadow 0.3s, -webkit-box-shadow 0.3s;
   }
 }
 .video-thumbnail img {
@@ -1424,7 +1466,7 @@ h6 {
 .actions__lists {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 100%;
-          flex: 0 0 100%; /* 677/1115 */
+          flex: 0 0 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1439,7 +1481,7 @@ h6 {
   .actions__lists {
     -webkit-box-flex: 0;
         -ms-flex: 0 0 100%;
-            flex: 0 0 100%; /* 677/1115 */
+            flex: 0 0 100%;
   }
 }
 @media (min-width: 991.98px) {
@@ -1467,7 +1509,7 @@ h6 {
 .actions__link {
   font-size: 0.875rem;
   font-weight: 500;
-  line-height: 128.571429%; /* 18px/14 */
+  line-height: 128.571429%;
   letter-spacing: 0.1px;
   color: #697b03;
 }
@@ -1481,7 +1523,7 @@ h6 {
   color: #697b03;
   font-size: 0.75rem;
   font-weight: 400;
-  line-height: 133.333333%; /* 16px/12 */
+  line-height: 133.333333%;
   letter-spacing: 0.2px;
 }
 
@@ -1499,7 +1541,7 @@ h6 {
 .button-block__title {
   color: #697b03;
   font-weight: 500;
-  line-height: 133.333333%; /* 24px/18 */
+  line-height: 133.333333%;
   letter-spacing: 0.2px;
   margin-bottom: 0.3125rem;
   font-size: 1.125rem;
@@ -1513,7 +1555,7 @@ h6 {
 .button-block__text {
   color: #697b03;
   font-size: 0.875rem;
-  line-height: 157.142857%; /* 22px/14 */
+  line-height: 157.142857%;
   letter-spacing: 0.1px;
   margin-bottom: 1.0625rem;
 }

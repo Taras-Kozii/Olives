@@ -14,8 +14,11 @@
     img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: contain;
       object-position: center;
+      @include on-tablet {
+        object-fit: cover;
+      }
     }
   }
 
@@ -41,11 +44,13 @@
     transform-origin: center left;
   }
   &__content {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     @include adaptive-property(row-gap, 1, 0, 2, rem);
     @include adaptive-property(padding-block, 150, 0, 200);
+    z-index: 3;
   }
   &__text {
     max-width: 400px;
