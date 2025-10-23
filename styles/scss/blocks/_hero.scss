@@ -29,14 +29,14 @@
     right: -0.25em;
     transform-origin: center right;
     transform: scaleX(0);
-    transition: transform $transition-duraction ease-in-out 0.5s;
-    background-image: url("../../../images/masks/slogan-mask.webp");
+    transition: transform $transition-duraction linear 0.3s;
+    background-image: url("../../images/masks/slogan-mask.webp");
     background-position: center;
     background-size: 110% 100%;
     border: none;
     outline: none;
   }
-  &.active::before {
+  &.show::before {
     transform: scaleX(1);
     transform-origin: center left;
   }

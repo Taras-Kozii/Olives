@@ -896,17 +896,17 @@ h6 {
   -webkit-transform: scaleX(0);
       -ms-transform: scaleX(0);
           transform: scaleX(0);
-  -webkit-transition: -webkit-transform 0.3s ease-in-out 0.5s;
-  transition: -webkit-transform 0.3s ease-in-out 0.5s;
-  transition: transform 0.3s ease-in-out 0.5s;
-  transition: transform 0.3s ease-in-out 0.5s, -webkit-transform 0.3s ease-in-out 0.5s;
-  background-image: url("../../../images/masks/slogan-mask.webp");
+  -webkit-transition: -webkit-transform 0.3s linear 0.3s;
+  transition: -webkit-transform 0.3s linear 0.3s;
+  transition: transform 0.3s linear 0.3s;
+  transition: transform 0.3s linear 0.3s, -webkit-transform 0.3s linear 0.3s;
+  background-image: url("../../images/masks/slogan-mask.webp");
   background-position: center;
   background-size: 110% 100%;
   border: none;
   outline: none;
 }
-.hero.active::before {
+.hero.show::before {
   -webkit-transform: scaleX(1);
       -ms-transform: scaleX(1);
           transform: scaleX(1);
@@ -1170,16 +1170,16 @@ h6 {
   -webkit-transform: scaleX(0);
       -ms-transform: scaleX(0);
           transform: scaleX(0);
-  -webkit-transition: -webkit-transform 0.3s ease-in-out 0.5s;
-  transition: -webkit-transform 0.3s ease-in-out 0.5s;
-  transition: transform 0.3s ease-in-out 0.5s;
-  transition: transform 0.3s ease-in-out 0.5s, -webkit-transform 0.3s ease-in-out 0.5s;
-  background-image: url("../../../images/masks/slogan-mask.webp");
+  -webkit-transition: -webkit-transform 0.3s linear 0.3s;
+  transition: -webkit-transform 0.3s linear 0.3s;
+  transition: transform 0.3s linear 0.3s;
+  transition: transform 0.3s linear 0.3s, -webkit-transform 0.3s linear 0.3s;
+  background-image: url("../../images/masks/slogan-mask.webp");
   background-position: center;
   background-size: 110% 110%;
   background-repeat: no-repeat;
 }
-.slogan.active::before {
+.slogan.show::before {
   -webkit-transform: scaleX(1);
       -ms-transform: scaleX(1);
           transform: scaleX(1);
@@ -1274,16 +1274,16 @@ h6 {
   -webkit-transform: scaleX(0);
       -ms-transform: scaleX(0);
           transform: scaleX(0);
-  -webkit-transition: -webkit-transform 0.3s ease-in-out 0.5s;
-  transition: -webkit-transform 0.3s ease-in-out 0.5s;
-  transition: transform 0.3s ease-in-out 0.5s;
-  transition: transform 0.3s ease-in-out 0.5s, -webkit-transform 0.3s ease-in-out 0.5s;
-  background-image: url("../../../images/masks/hero-mask.webp");
+  -webkit-transition: -webkit-transform 0.3s linear 0.3s;
+  transition: -webkit-transform 0.3s linear 0.3s;
+  transition: transform 0.3s linear 0.3s;
+  transition: transform 0.3s linear 0.3s, -webkit-transform 0.3s linear 0.3s;
+  background-image: url("../../images/masks/hero-mask.webp");
   background-position: center;
   background-size: 110% 112%;
   background-repeat: no-repeat;
 }
-.contact.active::before {
+.contact.show::before {
   -webkit-transform: scaleX(1);
       -ms-transform: scaleX(1);
           transform: scaleX(1);

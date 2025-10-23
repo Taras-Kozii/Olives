@@ -26,3 +26,7 @@ export function lockPage() {
   }
 }
 }
+
+export function showBefore(item) {
+  item.classList.add('show');
+}
